@@ -49,11 +49,6 @@ int main() {
   printf("Informe o número de pontos turísticos A: ");
   scanf("%d", &numero_de_pontos_turisticosA);
 
-  printf("Qual o pib-per-capita A (em Reais por habitante)? ");
-  scanf("%f", &pib_per_capitaA);
-
-  printf("Qual é a densidade populacional A (hab/km²)? ");
-  scanf("%f", &densidade_populacionalA);
 
 
   // 2. dados brutos c2
@@ -75,12 +70,6 @@ int main() {
   printf("Informe o número de pontos turísticos B: ");
   scanf("%d", &numero_de_pontos_turisticosB);
 
-  printf("Qual o pib-per-capita B (em Reais por habitante)? ");
-  scanf("%f", &pib_per_capitaB);
-
-  printf("Qual é a densidade populacional B (hab/km²)? ");
-  scanf("%f", &densidade_populacionalB);
-
   // 3. contas c1
   densidade_populacionalA = populacaoA / areaA;
   pib_per_capitaA = (pibA * 1000000.0) / populacaoA;
@@ -99,6 +88,7 @@ int main() {
   printf("PIBA: %.2f milhões de Reais\n", pibA);
   printf("Número de pontos turísticosA: %d\n", numero_de_pontos_turisticosA);
   printf("PIB per capitaA: %.2f Reais por habitante\n", pib_per_capitaA);
+  
   // 4. dados da cidade c2
   printf("\nCarta cadastrada 2:\n");
   printf("CidadeB: %s\n", nomeCidadeB);
@@ -126,9 +116,51 @@ int main() {
   int resultadoPontosTuristicos = (numero_de_pontos_turisticosA > numero_de_pontos_turisticosB);
   printf("\nA primeira cidade tem mais pontos turisticos que a segunda?: %d\n", resultadoPontosTuristicos);
   int resultadoPibPerCapita = (pib_per_capitaA > pib_per_capitaB);
-  printf("\nO pib per capita da primeira cidade e maior que o da segunda?: %d\n", (pib_per_capitaA > pib_per_capitaB));
+  printf("\nO pib per capita da primeira cidade e maior que o da segunda?: %d\n", resultadoPibPerCapita);
   int resultadoDensidadePopulacional = (densidade_populacionalA > densidade_populacionalB);
   printf("\nA densidade populacional da primeira cidade e maior que a da segunda?: %d\n", resultadoDensidadePopulacional);
+
+
+  //Fechamento de vencedor
+
+  printf("\n----- Resumo das Estatisticas.-----\n");
+  
+  //Populacao
+  if(populacaoA > populacaoB)
+  {printf("A Primeira Cidade tem MAIS Habitantes.\n");}
+  else
+  {printf("A segunda cidade tem MAIS Habitantes.\n");}
+
+  //Area
+  if(areaA > areaB)
+  {printf("A area da primeira cidade e maior doque da segunda\n");}
+  else
+  {printf("A area da segunda cidade Venceu\n");}
+
+  //PIB
+  if(pibA > pibB)
+  {printf("O PIB da primeira cidade e Maior\n");}
+  else
+  {printf("O PIB da segunda cidade e Maior\n");}
+
+  //Pontos Turisticos
+  if(numero_de_pontos_turisticosA > numero_de_pontos_turisticosB)
+  {printf("A primeira cidade te mais Pontos Turisticos.\n");}
+  else
+  {printf("A segunda cidade tem mais Pontos Turisticos.\n");}
+
+  //PIB Per Capita
+  if(pib_per_capitaA > pib_per_capitaB)
+  {printf("O Pib Percapita da primeira cidade e Maior.\n");}
+  else
+  {printf("O Pib Percapita da segunda cidade e Maior.\n");}
+
+  //Densidade Populacional
+  if(densidade_populacionalA > densidade_populacionalB)
+  {printf("A Densidade Populacional da primeira cidade e Maior.\n");}
+  else
+  {printf("A Densidade Populacional da segunda cidade e Maior.\n");}
+
 
   return 0;
 }
