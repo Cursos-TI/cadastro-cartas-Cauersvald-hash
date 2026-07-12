@@ -9,14 +9,14 @@ int main() {
         printf("1. Torre \n");
         printf("2. Bispo \n");
         printf("3. Rainha \n");
-        printf("4. Sair \n");
+        printf("4. Cavalo \n");
+        printf("5. Sair \n");
         printf("Escolha uma opção: \n");
         scanf("%d", &option);
        
         switch(option) {
             case 1:
              
-                 printf("\nVoce escolheu Torre \n");
                  printf("--- Torre ---\n");
              for (int t = 0; t < 5; t++)
              {
@@ -28,21 +28,22 @@ int main() {
             
                 case 2:
              
-                 printf("Você escolheu Bispo \n");
                  printf("--- Bispo ---\n");
-                 int b = 0;
-                 while (b < 5) {
-                 printf("Cima, Direita\n");
+                 for (int bp = 1; bp <= 5; bp++)
+                 {
+                  printf("Cima\n");
+
+                 int b = 1;
+                 while (b <= 1) {
+                 printf("Direita\n");
                  b++;
              }
-                printf("\n");
-                
+             }  
              break;
             
                 case 3:
-                
-                 printf("Você escolheu Rainha\n");
-                 printf("--- Rainha ===\n");
+            
+                 printf("=== Rainha ===\n");
                  int r = 0;
                 do{
                  printf("Esquerda \n");
@@ -53,6 +54,25 @@ int main() {
              break;
 
             case 4:
+
+            printf("--- Cavalo ---\n");
+            printf("\n");
+            int c;
+            int cl = 1;
+            
+            for (c = 1; c <= 1; c++){
+                cl = 1;
+                while (cl <= 2){
+                printf("Baixo\n");
+                cl++;
+                }
+                printf("Esquerda\n");
+                 printf("\n");
+            }
+             break;
+
+
+            case 5:
                  printf("Saindo...\n");
 
                 break;
@@ -60,7 +80,7 @@ int main() {
                 default:
                 printf("Opção inválida!\n");
         }
-    } while (option != 4);
+    } while (option != 5);
    
     return 0;
 }
